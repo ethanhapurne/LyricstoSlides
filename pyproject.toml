@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lyrics-to-slides"
+version = "0.1.0"
+description = "CLI scaffolding for converting chorded lyric PDFs into per-song PowerPoint files."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pdfplumber>=0.11.0",
+    "python-pptx>=0.6.23",
+]
+
+[project.scripts]
+lyrics-to-slides = "lyrics_to_slides.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
